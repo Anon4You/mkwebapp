@@ -23,14 +23,14 @@ This script runs on a standard Termux installation. **No additional packages nee
 
 ## Installation
 
-1.  Save the script to your device (e.g., `mkwebapp`).
+1.  Save the script to your device (e.g., `mkwebapp.sh`).
 2.  Make it executable:
     ```bash
-    chmod +x mkwebapp
+    chmod +x mkwebapp.sh
     ```
 3.  (Optional) Move it to your path for system-wide access:
     ```bash
-    mv mkwebapp $PREFIX/bin/
+    mv mkwebapp.sh $PREFIX/bin/mkwebapp 
     ```
 
 ## Usage
@@ -38,7 +38,7 @@ This script runs on a standard Termux installation. **No additional packages nee
 ### Basic Syntax
 
 ```bash
-./mkwebapp --url <URL> --name <AppName> [options]
+./mkwebapp.sh --url <URL> --name <AppName> [options]
 ```
 
 ### Arguments
@@ -63,14 +63,14 @@ This script runs on a standard Termux installation. **No additional packages nee
 This creates a package named `web-youtube.deb` that launches YouTube. It will automatically attempt to download the YouTube icon.
 
 ```bash
-./mkwebapp --url "https://youtube.com" --name "YouTube"
+mkwebapp --url "https://youtube.com" --name "YouTube"
 ```
 
 ### 2. Create a Web App with a Custom Icon
 If you have a specific logo file saved locally:
 
 ```bash
-./mkwebapp \
+mkwebapp \
   --url "https://chatgpt.com" \
   --name "ChatGPT" \
   --icon "/sdcard/Download/gpt-icon.png"
@@ -80,7 +80,7 @@ If you have a specific logo file saved locally:
 Launch the site specifically using Firefox (useful if you have multiple browsers installed):
 
 ```bash
-./mkwebapp \
+mkwebapp \
   --url "https://proton.me/mail" \
   --name "ProtonMail" \
   --browser "firefox --new-window"
